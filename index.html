@@ -257,7 +257,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
             <div class="fok hd" id="ok-nf"></div>
           </div>
           <div class="fg">
-            <label>Boleto <span class="rq">*</span></label>
+            <label>Boleto <span class="rq" id="rq-bl">*</span> <span id="obs-bl" style="font-size:10px;color:var(--t3)"></span></label>
             <div class="fzone" id="z-bl" onclick="document.getElementById('inp-bl').click()">
               <div class="fzico">🏦</div>
               <div class="fzlbl">Clique para anexar boleto</div>
@@ -345,6 +345,14 @@ function setTipo(t){
   tipo=t;
   document.getElementById('btn-compra').classList.toggle('on',t==='compra');
   document.getElementById('btn-reembolso').classList.toggle('on',t==='reembolso');
+  // Boleto obrigatório só para compra
+  var rqBl = document.getElementById('rq-bl');
+  var obsBl = document.getElementById('obs-bl');
+  if(rqBl) rqBl.style.display = t==='compra' ? '' : 'none';
+  if(obsBl) obsBl.textContent = t==='reembolso' ? '(opcional para reembolso)' : '';
+  // Comprovante obrigatório só para reembolso
+  var obs = document.getElementById('cp-obs');
+  if(obs) obs.textContent = t==='reembolso' ? '(obrigatório para reembolso)' : '(opcional para compra)';
 }
 
 // VENCIMENTO
@@ -416,33 +424,41 @@ document.getElementById('btn-sub').onclick=async function(){
   if(!pt){toast('Selecione o tipo de chave PIX','er');return;}
   if(!px){toast('Informe a chave PIX','er');return;}
   if(!files.nf){toast('Anexe a Nota Fiscal','er');return;}
-  if(!files.bl){toast('Anexe o Boleto','er');return;}
+  if(tipo==='compra'&&!files.bl){toast('Anexe o Boleto','er');return;}
   if(tipo==='reembolso'&&!files.cp){toast('Comprovante obrigatório para reembolso','er');return;}
   var rv=parseFloat(val.replace(/[R$\s.]/g,'').replace(',','.'))||0;
   var diff=Math.ceil((new Date(venc+'T12:00:00')-new Date())/(1000*60*60*24));
-  var data={tipo:tipo,sol:U.nome,se:U.email,depto:U.depto,ben:ben,valor:rv,venc:venc,obs:obs,
-    banco:gv('f-banco'),ag:gv('f-ag'),conta:gv('f-conta'),cpf:gv('f-cpf'),
-    pixTipo:pt,pix:px,emergencial:String(diff<=5),status:'pending',
+  // Monta objeto compacto para não estourar URL do JSONP
+  var data={
+    tipo:tipo, sol:U.nome, se:U.email, depto:U.depto,
+    ben:ben, valor:rv, venc:venc, obs:obs.substring(0,300),
+    banco:gv('f-banco'), ag:gv('f-ag'), conta:gv('f-conta'), cpf:gv('f-cpf'),
+    pixTipo:pt, pix:px,
+    emergencial:String(diff<=5), status:'pending',
     data:new Date().toLocaleDateString('pt-BR'),
     nfNome:files.nf?files.nf.name:'',
     blNome:files.bl?files.bl.name:'',
-    cpNome:files.cp?files.cp.name:''};
+    cpNome:files.cp?files.cp.name:''
+  };
   var btn=this;
   btn.disabled=true;btn.innerHTML='<span class="spinner"></span> Enviando...';
   try{
-    var j=await jp(API+'?payload='+encodeURIComponent(JSON.stringify({action:'create',data:data})));
+    var payload = JSON.stringify({action:'create',data:data});
+    var j = await jp(API+'?payload='+encodeURIComponent(payload));
     if(j&&j.ok){
       document.getElementById('ok-id').textContent='#'+j.id;
       document.getElementById('form-area').style.display='none';
       document.getElementById('success').style.display='block';
       window.scrollTo(0,0);
     }else{
-      toast('Erro ao enviar. Tente novamente.','er');
-      btn.disabled=false;btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Enviar solicitação';
+      toast('Erro: '+(j&&j.error?j.error:'tente novamente'),'er');
+      btn.disabled=false;
+      btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Enviar solicitação';
     }
   }catch(e){
-    toast('Sem conexão. Verifique a internet.','er');
-    btn.disabled=false;btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Enviar solicitação';
+    toast('Erro de conexão. Verifique a internet e tente novamente.','er');
+    btn.disabled=false;
+    btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Enviar solicitação';
   }
 };
 
