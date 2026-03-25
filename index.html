@@ -16,8 +16,6 @@
   --r:9px;--rl:14px;--rxl:20px;
 }
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;min-height:100vh}
-
-/* LOGIN */
 #login{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:linear-gradient(150deg,var(--brand-d),var(--brand) 60%,#4A9AD4)}
 .lcard{background:#fff;border-radius:var(--rxl);padding:36px 32px;width:100%;max-width:400px;box-shadow:0 8px 32px rgba(0,0,0,.12)}
 .llogo{text-align:center;margin-bottom:28px}
@@ -34,8 +32,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .lbtn:hover{opacity:.9}
 .lhint{text-align:center;font-size:11px;color:var(--t3);margin-top:10px}
 .lfooter{margin-top:18px;font-size:11px;color:rgba(255,255,255,.5)}
-
-/* APP */
 #app{display:none;flex-direction:column;min-height:100vh}
 .hdr{background:linear-gradient(135deg,var(--brand-d),var(--brand));padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
 .hdr-left{display:flex;align-items:center;gap:10px}
@@ -47,21 +43,16 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .hdr-av{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
 .hdr-nm{font-size:12px;color:rgba(255,255,255,.85);font-weight:500}
 .btn-sair{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:4px 10px;border-radius:var(--r);font-size:11px;cursor:pointer;font-family:inherit}
-
 .main{max-width:680px;margin:0 auto;padding:22px 18px}
-
-/* SUCCESS */
-#success{display:none;text-align:center;padding:48px 24px}
+#success{display:none;text-align:center;padding:40px 20px}
 .ok-ico{width:64px;height:64px;border-radius:50%;background:var(--gbg);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
 .ok-ico svg{width:32px;height:32px;stroke:var(--green);fill:none;stroke-width:2.5}
 .ok-title{font-size:20px;font-weight:700;color:var(--green);margin-bottom:6px}
 .ok-sub{font-size:13px;color:var(--t2);margin-bottom:18px;line-height:1.6}
-.ok-card{background:#fff;border:1px solid var(--border);border-radius:var(--rl);padding:14px 18px;text-align:left;margin-bottom:18px;display:inline-block}
+.ok-card{background:#fff;border:1px solid var(--border);border-radius:var(--rl);padding:14px 18px;margin-bottom:18px}
 .ok-id{font-size:24px;font-weight:700;color:var(--brand);font-family:monospace}
 .ok-label{font-size:11px;color:var(--t3);margin-bottom:3px}
 .btn-new{background:var(--brand);color:#fff;border:none;padding:11px 26px;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
-
-/* TIPO */
 .tipo-sel{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
 .tipo-btn{padding:16px;border:2px solid var(--border);border-radius:var(--rl);background:#fff;cursor:pointer;text-align:center;transition:all .15s;font-family:inherit}
 .tipo-btn:hover{border-color:var(--brand);background:var(--brand-l)}
@@ -69,8 +60,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .tipo-ico{font-size:28px;margin-bottom:7px}
 .tipo-title{font-size:14px;font-weight:600;color:var(--text)}
 .tipo-sub{font-size:11px;color:var(--t3);margin-top:2px}
-
-/* CARD */
 .card{background:#fff;border:1px solid var(--border);border-radius:var(--rl);padding:18px 20px;margin-bottom:12px}
 .card-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin-bottom:12px;padding-bottom:7px;border-bottom:1px solid var(--border)}
 .fr{display:grid;grid-template-columns:1fr 1fr;gap:11px}
@@ -86,8 +75,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .vi-ok{background:var(--brand-l);border:1px solid var(--border2);color:var(--brand-d)}
 .vi-emerg{background:var(--rbg);border:1px solid #F7C1C1;color:var(--red)}
 .info-pill{background:var(--brand-l);border:1px solid var(--border2);border-radius:var(--r);padding:9px 13px;font-size:12px;color:var(--brand-d);margin-bottom:12px}
-
-/* SUBMIT */
 .btn-submit{width:100%;background:var(--brand);color:#fff;border:none;padding:13px;border-radius:var(--r);font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px}
 .btn-submit:hover{opacity:.9}
 .btn-submit:disabled{opacity:.6;cursor:not-allowed}
@@ -98,20 +85,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .toast.on{opacity:1}
 .toast.er{background:var(--red)}
 #pix-wrap{display:none}
-.fzone{border:1.5px dashed var(--border2);border-radius:var(--r);padding:14px;text-align:center;cursor:pointer;transition:all .15s;background:var(--bg)}
-.fzone:hover{border-color:var(--brand);background:var(--brand-l)}
-.fzone.has-file{border-color:var(--green);background:var(--gbg)}
-.fzico{font-size:22px;margin-bottom:5px}
-.fzlbl{font-size:12px;font-weight:500;color:var(--t2)}
-.fzsub{font-size:10px;color:var(--t3);margin-top:2px}
-.fok{display:flex;align-items:center;gap:7px;padding:7px 10px;background:var(--gbg);border:1px solid #A8D88A;border-radius:var(--r);font-size:12px;color:var(--green);font-weight:500;margin-top:5px}
-.fok.hd{display:none}
 @media(max-width:500px){.fr{grid-template-columns:1fr}.tipo-sel{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- LOGIN -->
 <div id="login">
   <div class="lcard">
     <div class="llogo">
@@ -139,7 +117,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   <div class="lfooter">FinanceFlow · Reserva Beach Club · Uso interno</div>
 </div>
 
-<!-- APP -->
 <div id="app">
   <header class="hdr">
     <div class="hdr-left">
@@ -157,30 +134,32 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   </header>
 
   <div class="main">
-    <!-- SUCESSO -->
     <div id="success">
       <div class="ok-ico"><svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg></div>
       <div class="ok-title">Solicitação enviada!</div>
       <div class="ok-sub">Sua solicitação foi registrada com sucesso.<br>O responsável já foi notificado por e-mail.</div>
-      <div style="background:#FFF3E0;border:2px solid #FFB74D;border-radius:12px;padding:18px 20px;margin-bottom:16px;font-size:13px;color:#7A4500;text-align:left">
-        <div style="font-size:15px;font-weight:700;margin-bottom:8px">📁 Próximo passo obrigatório</div>
-        <div style="margin-bottom:12px;line-height:1.6">Envie os documentos abaixo para a pasta do Google Drive da empresa:<br>
-        <strong>• Nota Fiscal</strong><br>
-        <strong>• Boleto</strong> (obrigatório para compra)<br>
-        <strong>• Comprovante de pagamento</strong> (obrigatório para reembolso)</div>
-        <a href="https://drive.google.com/drive/folders/19hrDx-ec16Hw-ZbA_pqpTzKj9Cpx5NqF?usp=sharing" target="_blank" style="display:inline-block;background:#F59E0B;color:#fff;text-decoration:none;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:700">
+
+      <div style="background:#FFF3E0;border:2px solid #FFB74D;border-radius:12px;padding:18px 20px;margin-bottom:18px;text-align:left">
+        <div style="font-size:15px;font-weight:700;color:#7A4500;margin-bottom:10px">📁 Próximo passo obrigatório</div>
+        <div style="font-size:13px;color:#7A4500;margin-bottom:14px;line-height:1.7">
+          Envie os documentos para a pasta do Google Drive da empresa:<br>
+          <strong>• Nota Fiscal</strong><br>
+          <strong>• Boleto</strong> (obrigatório para compra)<br>
+          <strong>• Comprovante de pagamento</strong> (obrigatório para reembolso)
+        </div>
+        <a href="https://drive.google.com/drive/folders/19hrDx-ec16Hw-ZbA_pqpTzKj9Cpx5NqF?usp=sharing" target="_blank"
+           style="display:inline-block;background:#F59E0B;color:#fff;text-decoration:none;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:700">
           📂 Abrir pasta do Google Drive
         </a>
       </div>
+
       <div class="ok-card">
         <div class="ok-label">Número da solicitação</div>
         <div class="ok-id" id="ok-id">#000</div>
       </div>
-      <br>
-      <button class="btn-new" onclick="resetForm()">Fazer nova solicitação</button>
+      <button class="btn-new" id="btn-new">Fazer nova solicitação</button>
     </div>
 
-    <!-- FORM -->
     <div id="form-area">
       <div class="tipo-sel">
         <button class="tipo-btn" id="btn-compra" onclick="setTipo('compra')">
@@ -246,8 +225,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
         </div>
       </div>
 
-
-
       <button class="btn-submit" id="btn-sub">
         <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
         Enviar solicitação
@@ -259,207 +236,163 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 <div class="toast" id="toast"></div>
 
 <script>
-var API='https://script.google.com/macros/s/AKfycbwg7HCM9UqW0HKwhi72dqa9KzjgZXwAJjsIyarD-x9ZhEv7CV0-1Gc0DQpuMz2ZIow3Yg/exec';
-var U=null, tipo='', _n=0;
+var API = 'https://script.google.com/macros/s/AKfycbwg7HCM9UqW0HKwhi72dqa9KzjgZXwAJjsIyarD-x9ZhEv7CV0-1Gc0DQpuMz2ZIow3Yg/exec';
+var U = null, tipo = '', _n = 0;
 
-// JSONP
-function jp(url){
-  return new Promise(function(res,rej){
-    var cb='_c'+(++_n)+'_'+Date.now(), s=document.createElement('script');
-    window[cb]=function(d){delete window[cb];document.body.removeChild(s);res(d);};
-    s.onerror=function(){delete window[cb];document.body.removeChild(s);rej(new Error('erro'));};
-    s.src=url+(url.indexOf('?')>=0?'&':'?')+'callback='+cb;
+function jp(url) {
+  return new Promise(function(res, rej) {
+    var cb = '_c' + (++_n) + '_' + Date.now(), s = document.createElement('script');
+    window[cb] = function(d) { delete window[cb]; document.body.removeChild(s); res(d); };
+    s.onerror = function() { delete window[cb]; document.body.removeChild(s); rej(new Error('erro')); };
+    s.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + cb;
     document.body.appendChild(s);
   });
 }
 
-// LOGIN
-function doLogin(){
-  var em=document.getElementById('l-email').value.trim().toLowerCase();
-  var dp=document.getElementById('l-depto').value;
-  var err=document.getElementById('l-err');
-  if(!em||!em.includes('@')){err.textContent='Digite um e-mail válido';err.style.display='block';return;}
-  if(!em.endsWith('@reservaclub.com.br')){err.textContent='Use seu e-mail @reservaclub.com.br';err.style.display='block';return;}
-  err.style.display='none';
-  if(!dp){toast('Selecione seu departamento','er');return;}
-  var pts=em.split('@')[0].split('.');
-  var nome=pts.map(function(p){return p.charAt(0).toUpperCase()+p.slice(1);}).join(' ');
-  var ini=(pts[0][0]+(pts[1]?pts[1][0]:pts[0][1]||'')).toUpperCase();
-  U={nome:nome,email:em,depto:dp,ini:ini};
-  localStorage.setItem('rbc_u',JSON.stringify(U));
-  document.getElementById('login').style.display='none';
-  var app=document.getElementById('app');app.style.display='flex';app.style.flexDirection='column';
-  document.getElementById('h-av').textContent=ini;
-  document.getElementById('h-nm').textContent=pts[0].charAt(0).toUpperCase()+pts[0].slice(1)+' · '+dp;
+function doLogin() {
+  var em = document.getElementById('l-email').value.trim().toLowerCase();
+  var dp = document.getElementById('l-depto').value;
+  var err = document.getElementById('l-err');
+  if (!em || !em.includes('@')) { err.textContent = 'Digite um e-mail válido'; err.style.display = 'block'; return; }
+  if (!em.endsWith('@reservaclub.com.br')) { err.textContent = 'Use seu e-mail @reservaclub.com.br'; err.style.display = 'block'; return; }
+  err.style.display = 'none';
+  if (!dp) { toast('Selecione seu departamento', 'er'); return; }
+  var pts = em.split('@')[0].split('.');
+  var nome = pts.map(function(p) { return p.charAt(0).toUpperCase() + p.slice(1); }).join(' ');
+  var ini = (pts[0][0] + (pts[1] ? pts[1][0] : pts[0][1] || '')).toUpperCase();
+  U = { nome: nome, email: em, depto: dp, ini: ini };
+  localStorage.setItem('rbc_u', JSON.stringify(U));
+  document.getElementById('login').style.display = 'none';
+  var app = document.getElementById('app');
+  app.style.display = 'flex';
+  app.style.flexDirection = 'column';
+  document.getElementById('h-av').textContent = ini;
+  document.getElementById('h-nm').textContent = pts[0].charAt(0).toUpperCase() + pts[0].slice(1) + ' · ' + dp;
 }
 
-document.getElementById('l-btn').onclick=doLogin;
-document.getElementById('l-email').onkeydown=function(e){if(e.key==='Enter')doLogin();};
-document.getElementById('l-depto').onkeydown=function(e){if(e.key==='Enter')doLogin();};
+document.getElementById('l-btn').onclick = doLogin;
+document.getElementById('l-email').onkeydown = function(e) { if (e.key === 'Enter') doLogin(); };
+document.getElementById('l-depto').onkeydown = function(e) { if (e.key === 'Enter') doLogin(); };
 
-document.getElementById('h-sair').onclick=function(){
-  U=null;localStorage.removeItem('rbc_u');
-  document.getElementById('app').style.display='none';
-  document.getElementById('login').style.display='flex';
-  document.getElementById('l-email').value='';
-  document.getElementById('l-depto').value='';
-  document.getElementById('l-err').style.display='none';
+document.getElementById('h-sair').onclick = function() {
+  U = null; localStorage.removeItem('rbc_u');
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('login').style.display = 'flex';
+  document.getElementById('l-email').value = '';
+  document.getElementById('l-depto').value = '';
+  document.getElementById('l-err').style.display = 'none';
 };
 
-// TIPO
-function setTipo(t){
-  tipo=t;
-  document.getElementById('btn-compra').classList.toggle('on',t==='compra');
-  document.getElementById('btn-reembolso').classList.toggle('on',t==='reembolso');
-  // Boleto obrigatório só para compra
-  var rqBl = document.getElementById('rq-bl');
-  var obsBl = document.getElementById('obs-bl');
-  if(rqBl) rqBl.style.display = t==='compra' ? '' : 'none';
-  if(obsBl) obsBl.textContent = t==='reembolso' ? '(opcional para reembolso)' : '';
-  // Comprovante obrigatório só para reembolso
-  var obs = document.getElementById('cp-obs');
-  if(obs) obs.textContent = t==='reembolso' ? '(obrigatório para reembolso)' : '(opcional para compra)';
+function setTipo(t) {
+  tipo = t;
+  document.getElementById('btn-compra').classList.toggle('on', t === 'compra');
+  document.getElementById('btn-reembolso').classList.toggle('on', t === 'reembolso');
 }
 
-// VENCIMENTO
-document.getElementById('f-venc').onchange=function(){
-  if(!this.value)return;
-  var D=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
-  var d=new Date(this.value+'T12:00:00'),i=0;
-  while(d.getDay()!==1&&d.getDay()!==4&&i<10){d.setDate(d.getDate()+1);i++;}
-  var prox=D[d.getDay()]+', '+String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear();
-  var diff=Math.ceil((new Date(this.value+'T12:00:00')-new Date())/(1000*60*60*24));
-  var el=document.getElementById('vinfo');
-  el.style.display='block';
-  if(diff<=5){
-    el.className='vinfo vi-emerg';
-    el.innerHTML='<strong>⚠️ Emergencial!</strong> Vencimento em '+diff+' dia(s). Será marcado como emergencial.';
-    var o=document.getElementById('f-obs');
-    if(!o.value.includes('EMERGENCIAL'))o.value=(o.value?o.value+'\n\n':'')+'⚠️ PAGAMENTO EMERGENCIAL — vencimento em '+diff+' dia(s).';
-  }else{
-    el.className='vinfo vi-ok';
-    el.innerHTML='<strong>📅 Próximo pagamento:</strong> '+prox;
+document.getElementById('f-venc').onchange = function() {
+  if (!this.value) return;
+  var D = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+  var d = new Date(this.value + 'T12:00:00'), i = 0;
+  while (d.getDay() !== 1 && d.getDay() !== 4 && i < 10) { d.setDate(d.getDate() + 1); i++; }
+  var prox = D[d.getDay()] + ', ' + String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + d.getFullYear();
+  var diff = Math.ceil((new Date(this.value + 'T12:00:00') - new Date()) / (1000*60*60*24));
+  var el = document.getElementById('vinfo');
+  el.style.display = 'block';
+  if (diff <= 5) {
+    el.className = 'vinfo vi-emerg';
+    el.innerHTML = '<strong>⚠️ Emergencial!</strong> Vencimento em ' + diff + ' dia(s). Será marcado como emergencial.';
+    var o = document.getElementById('f-obs');
+    if (!o.value.includes('EMERGENCIAL')) o.value = (o.value ? o.value + '\n\n' : '') + '⚠️ PAGAMENTO EMERGENCIAL — vencimento em ' + diff + ' dia(s).';
+  } else {
+    el.className = 'vinfo vi-ok';
+    el.innerHTML = '<strong>📅 Próximo pagamento:</strong> ' + prox;
   }
 };
 
-// VALOR
-document.getElementById('f-valor').oninput=function(){
-  var v=this.value.replace(/\D/g,'');
-  if(!v){this.value='';return;}
-  v=(parseInt(v)/100).toFixed(2);
-  this.value='R$ '+v.replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+document.getElementById('f-valor').oninput = function() {
+  var v = this.value.replace(/\D/g, '');
+  if (!v) { this.value = ''; return; }
+  v = (parseInt(v) / 100).toFixed(2);
+  this.value = 'R$ ' + v.replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 };
 
-// PIX
-document.getElementById('f-pix-tipo').onchange=function(){
-  document.getElementById('pix-wrap').style.display=this.value?'block':'none';
+document.getElementById('f-pix-tipo').onchange = function() {
+  document.getElementById('pix-wrap').style.display = this.value ? 'block' : 'none';
 };
 
-// FILE HANDLERS
-var files = {nf: null, bl: null, cp: null};
-
-['nf','bl','cp'].forEach(function(t){
-  document.getElementById('inp-'+t).onchange = function(){
-    if(this.files && this.files[0]){
-      files[t] = this.files[0];
-      var ok = document.getElementById('ok-'+t);
-      ok.textContent = '✓ ' + this.files[0].name;
-      ok.classList.remove('hd');
-      document.getElementById('z-'+t).classList.add('has-file');
-      toast('Arquivo selecionado: ' + this.files[0].name);
-    }
+document.getElementById('btn-sub').onclick = async function() {
+  if (!tipo) { toast('Selecione Compra ou Reembolso', 'er'); return; }
+  var ben = gv('f-ben'), val = gv('f-valor'), venc = gv('f-venc'), obs = gv('f-obs'), pt = gv('f-pix-tipo'), px = gv('f-pix');
+  if (!ben) { toast('Informe o beneficiário', 'er'); return; }
+  if (!val) { toast('Informe o valor', 'er'); return; }
+  if (!venc) { toast('Informe a data de vencimento', 'er'); return; }
+  if (!obs) { toast('Descreva a solicitação', 'er'); return; }
+  if (!pt) { toast('Selecione o tipo de chave PIX', 'er'); return; }
+  if (!px) { toast('Informe a chave PIX', 'er'); return; }
+  var rv = parseFloat(val.replace(/[R$\s.]/g, '').replace(',', '.')) || 0;
+  var diff = Math.ceil((new Date(venc + 'T12:00:00') - new Date()) / (1000*60*60*24));
+  var data = {
+    tipo: tipo, sol: U.nome, se: U.email, depto: U.depto,
+    ben: ben, valor: rv, venc: venc, obs: obs.substring(0, 300),
+    banco: gv('f-banco'), ag: gv('f-ag'), conta: gv('f-conta'), cpf: gv('f-cpf'),
+    pixTipo: pt, pix: px, emergencial: String(diff <= 5),
+    status: 'pending', data: new Date().toLocaleDateString('pt-BR')
   };
-});
-
-// Update comprovante label when tipo changes
-var origSetTipo = setTipo;
-setTipo = function(t){
-  origSetTipo(t);
-  var obs = document.getElementById('cp-obs');
-  if(obs) obs.textContent = t==='reembolso' ? '(obrigatório para reembolso)' : '(opcional para compra)';
-};
-
-// SUBMIT
-document.getElementById('btn-sub').onclick=async function(){
-  if(!tipo){toast('Selecione Compra ou Reembolso','er');return;}
-  var ben=gv('f-ben'),val=gv('f-valor'),venc=gv('f-venc'),obs=gv('f-obs'),pt=gv('f-pix-tipo'),px=gv('f-pix');
-  if(!ben){toast('Informe o beneficiário','er');return;}
-  if(!val){toast('Informe o valor','er');return;}
-  if(!venc){toast('Informe a data de vencimento','er');return;}
-  if(!obs){toast('Descreva a solicitação','er');return;}
-  if(!pt){toast('Selecione o tipo de chave PIX','er');return;}
-  if(!px){toast('Informe a chave PIX','er');return;}
-
-  var rv=parseFloat(val.replace(/[R$\s.]/g,'').replace(',','.'))||0;
-  var diff=Math.ceil((new Date(venc+'T12:00:00')-new Date())/(1000*60*60*24));
-  // Monta objeto compacto para não estourar URL do JSONP
-  var data={
-    tipo:tipo, sol:U.nome, se:U.email, depto:U.depto,
-    ben:ben, valor:rv, venc:venc, obs:obs.substring(0,300),
-    banco:gv('f-banco'), ag:gv('f-ag'), conta:gv('f-conta'), cpf:gv('f-cpf'),
-    pixTipo:pt, pix:px,
-    emergencial:String(diff<=5), status:'pending',
-    data:new Date().toLocaleDateString('pt-BR'),
-
-  };
-  var btn=this;
-  btn.disabled=true;btn.innerHTML='<span class="spinner"></span> Enviando...';
-  try{
-    var payload = JSON.stringify({action:'create',data:data});
-    var j = await jp(API+'?payload='+encodeURIComponent(payload));
-    if(j&&j.ok){
-      document.getElementById('ok-id').textContent='#'+j.id;
-      document.getElementById('form-area').style.display='none';
-      document.getElementById('success').style.display='block';
-      window.scrollTo(0,0);
-    }else{
-      toast('Erro: '+(j&&j.error?j.error:'tente novamente'),'er');
-      btn.disabled=false;
-      btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Enviar solicitação';
+  var btn = this;
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Enviando...';
+  try {
+    var j = await jp(API + '?payload=' + encodeURIComponent(JSON.stringify({action:'create', data:data})));
+    if (j && j.ok) {
+      document.getElementById('ok-id').textContent = '#' + j.id;
+      document.getElementById('form-area').style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+      window.scrollTo(0, 0);
+    } else {
+      toast('Erro: ' + (j && j.error ? j.error : 'tente novamente'), 'er');
+      btn.disabled = false;
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Enviar solicitação';
     }
-  }catch(e){
-    toast('Erro de conexão. Verifique a internet e tente novamente.','er');
-    btn.disabled=false;
-    btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Enviar solicitação';
+  } catch(e) {
+    toast('Erro de conexão. Tente novamente.', 'er');
+    btn.disabled = false;
+    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Enviar solicitação';
   }
 };
 
-function resetForm(){
-  document.getElementById('success').style.display='none';
-  document.getElementById('form-area').style.display='block';
-  ['f-ben','f-valor','f-venc','f-obs','f-banco','f-ag','f-conta','f-cpf','f-pix-tipo','f-pix'].forEach(function(id){var e=document.getElementById(id);if(e)e.value='';});
-  document.getElementById('vinfo').style.display='none';
-  document.getElementById('pix-wrap').style.display='none';
-  tipo='';
-  files = {nf:null, bl:null, cp:null};
-  ['nf','bl','cp'].forEach(function(t){
-    document.getElementById('ok-'+t).classList.add('hd');
-    document.getElementById('z-'+t).classList.remove('has-file');
-    document.getElementById('inp-'+t).value='';
+document.getElementById('btn-new').onclick = function() {
+  document.getElementById('success').style.display = 'none';
+  document.getElementById('form-area').style.display = 'block';
+  ['f-ben','f-valor','f-venc','f-obs','f-banco','f-ag','f-conta','f-cpf','f-pix-tipo','f-pix'].forEach(function(id) {
+    var e = document.getElementById(id); if (e) e.value = '';
   });
+  document.getElementById('vinfo').style.display = 'none';
+  document.getElementById('pix-wrap').style.display = 'none';
+  tipo = '';
   document.getElementById('btn-compra').classList.remove('on');
   document.getElementById('btn-reembolso').classList.remove('on');
-  var btn=document.getElementById('btn-sub');
-  btn.disabled=false;btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Enviar solicitação';
-  window.scrollTo(0,0);
-}
+  var btn = document.getElementById('btn-sub');
+  btn.disabled = false;
+  btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Enviar solicitação';
+  window.scrollTo(0, 0);
+};
 
-function gv(id){var e=document.getElementById(id);return e?e.value.trim():'';}
-function toast(m,t){var e=document.getElementById('toast');e.textContent=m;e.className='toast '+(t||'');e.classList.add('on');setTimeout(function(){e.classList.remove('on');},3000);}
+function gv(id) { var e = document.getElementById(id); return e ? e.value.trim() : ''; }
+function toast(m, t) { var e = document.getElementById('toast'); e.textContent = m; e.className = 'toast ' + (t||''); e.classList.add('on'); setTimeout(function() { e.classList.remove('on'); }, 3000); }
 
-// RESTORE
-(function(){
-  try{
-    var s=localStorage.getItem('rbc_u');if(!s)return;
-    var u=JSON.parse(s);
-    if(u&&u.email&&u.depto){
-      U=u;
-      document.getElementById('login').style.display='none';
-      var app=document.getElementById('app');app.style.display='flex';app.style.flexDirection='column';
-      document.getElementById('h-av').textContent=u.ini||'??';
-      document.getElementById('h-nm').textContent=u.nome.split(' ')[0]+' · '+u.depto;
+(function() {
+  try {
+    var s = localStorage.getItem('rbc_u'); if (!s) return;
+    var u = JSON.parse(s);
+    if (u && u.email && u.depto) {
+      U = u;
+      document.getElementById('login').style.display = 'none';
+      var app = document.getElementById('app');
+      app.style.display = 'flex'; app.style.flexDirection = 'column';
+      document.getElementById('h-av').textContent = u.ini || '??';
+      document.getElementById('h-nm').textContent = u.nome.split(' ')[0] + ' · ' + u.depto;
     }
-  }catch(e){localStorage.removeItem('rbc_u');}
+  } catch(e) { localStorage.removeItem('rbc_u'); }
 })();
 </script>
 </body>
