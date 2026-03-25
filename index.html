@@ -162,11 +162,14 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
       <div class="ok-ico"><svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg></div>
       <div class="ok-title">Solicitação enviada!</div>
       <div class="ok-sub">Sua solicitação foi registrada com sucesso.<br>O responsável já foi notificado por e-mail.</div>
-      <div style="background:#FFF3E0;border:1px solid #FFB74D;border-radius:12px;padding:14px 18px;margin-bottom:16px;font-size:13px;color:#7A4500;text-align:left">
-        <strong>📁 Próximo passo obrigatório:</strong><br>
-        Envie os documentos (NF, Boleto e Comprovante) para a pasta do Google Drive da empresa:<br>
-        <a href="https://drive.google.com/drive/folders/19hrDx-ec16Hw-ZbA_pqpTzKj9Cpx5NqF?usp=sharing" target="_blank" id="drive-link" style="color:#1B5FA3;font-weight:600;word-break:break-all">
-          📂 Clique aqui para abrir a pasta do Drive e enviar os documentos
+      <div style="background:#FFF3E0;border:2px solid #FFB74D;border-radius:12px;padding:18px 20px;margin-bottom:16px;font-size:13px;color:#7A4500;text-align:left">
+        <div style="font-size:15px;font-weight:700;margin-bottom:8px">📁 Próximo passo obrigatório</div>
+        <div style="margin-bottom:12px;line-height:1.6">Envie os documentos abaixo para a pasta do Google Drive da empresa:<br>
+        <strong>• Nota Fiscal</strong><br>
+        <strong>• Boleto</strong> (obrigatório para compra)<br>
+        <strong>• Comprovante de pagamento</strong> (obrigatório para reembolso)</div>
+        <a href="https://drive.google.com/drive/folders/19hrDx-ec16Hw-ZbA_pqpTzKj9Cpx5NqF?usp=sharing" target="_blank" style="display:inline-block;background:#F59E0B;color:#fff;text-decoration:none;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:700">
+          📂 Abrir pasta do Google Drive
         </a>
       </div>
       <div class="ok-card">
@@ -243,44 +246,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">Documentos anexos</div>
-        <div class="fr">
-          <div class="fg">
-            <label>Nota Fiscal <span class="rq">*</span></label>
-            <div class="fzone" id="z-nf" onclick="document.getElementById('inp-nf').click()">
-              <div class="fzico">📄</div>
-              <div class="fzlbl">Clique para anexar NF</div>
-              <div class="fzsub">PDF · máx 10 MB</div>
-            </div>
-            <input type="file" id="inp-nf" accept=".pdf,.jpg,.png" style="display:none">
-            <div class="fok hd" id="ok-nf"></div>
-          </div>
-          <div class="fg">
-            <label>Boleto <span class="rq" id="rq-bl">*</span> <span id="obs-bl" style="font-size:10px;color:var(--t3)"></span></label>
-            <div class="fzone" id="z-bl" onclick="document.getElementById('inp-bl').click()">
-              <div class="fzico">🏦</div>
-              <div class="fzlbl">Clique para anexar boleto</div>
-              <div class="fzsub">PDF · máx 10 MB</div>
-            </div>
-            <input type="file" id="inp-bl" accept=".pdf" style="display:none">
-            <div class="fok hd" id="ok-bl"></div>
-          </div>
-        </div>
-        <div class="fg">
-          <label id="lbl-cp">Comprovante de pagamento <span id="cp-obs" style="font-size:10px;color:var(--t3)">(obrigatório para reembolso)</span></label>
-          <div class="fzone" id="z-cp" onclick="document.getElementById('inp-cp').click()">
-            <div class="fzico">🧾</div>
-            <div class="fzlbl">Clique para anexar comprovante</div>
-            <div class="fzsub">PDF, JPG, PNG · máx 10 MB</div>
-          </div>
-          <input type="file" id="inp-cp" accept=".pdf,.jpg,.png" style="display:none">
-          <div class="fok hd" id="ok-cp"></div>
-        </div>
-        <div style="background:var(--brand-l);border:1px solid var(--border2);border-radius:var(--r);padding:9px 12px;font-size:11px;color:var(--brand-d);margin-top:8px">
-          📁 Os arquivos serão salvos automaticamente no Google Drive da empresa em uma pasta por departamento.
-        </div>
-      </div>
+
 
       <button class="btn-submit" id="btn-sub">
         <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
@@ -423,9 +389,7 @@ document.getElementById('btn-sub').onclick=async function(){
   if(!obs){toast('Descreva a solicitação','er');return;}
   if(!pt){toast('Selecione o tipo de chave PIX','er');return;}
   if(!px){toast('Informe a chave PIX','er');return;}
-  if(!files.nf){toast('Anexe a Nota Fiscal','er');return;}
-  if(tipo==='compra'&&!files.bl){toast('Anexe o Boleto','er');return;}
-  if(tipo==='reembolso'&&!files.cp){toast('Comprovante obrigatório para reembolso','er');return;}
+
   var rv=parseFloat(val.replace(/[R$\s.]/g,'').replace(',','.'))||0;
   var diff=Math.ceil((new Date(venc+'T12:00:00')-new Date())/(1000*60*60*24));
   // Monta objeto compacto para não estourar URL do JSONP
@@ -436,9 +400,7 @@ document.getElementById('btn-sub').onclick=async function(){
     pixTipo:pt, pix:px,
     emergencial:String(diff<=5), status:'pending',
     data:new Date().toLocaleDateString('pt-BR'),
-    nfNome:files.nf?files.nf.name:'',
-    blNome:files.bl?files.bl.name:'',
-    cpNome:files.cp?files.cp.name:''
+
   };
   var btn=this;
   btn.disabled=true;btn.innerHTML='<span class="spinner"></span> Enviando...';
